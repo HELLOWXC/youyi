@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒子</title>
+    <style>
+        .container{
+            display: flex;
+            /*一直在一行排列，有限的长度均分给多个项目 从左->右*/
+            /*flex-direction: row;*/
+            /*从右->左*/
+            /*flex-direction: row-reverse;*/
+            /*主轴为垂直方向 方向从上至下*/
+            /*flex-direction: column;*/
+            /*从下至上*/
+            /*flex-direction: column-reverse;*/
+            /*换行 wrap 换行后 第一行在上方*/
+            /*flex-wrap: wrap;*/
+            /*换行后 第一行在下方*/
+            /*flex-wrap: wrap-reverse;*/
+            /*flex-flow是flex-direction和flex-wrap的简写*/
+            flex-flow:row wrap;
+            /*对齐方式*/
+            /*justify-content: flex-end;*/
+            justify-content: center;
+            /*justify-content: space-between;*/
+            /*justify-content: space-around;*/
+            /*交叉轴上的对齐方式*/
+            /*align-items: flex-start;*/
+            /*align-items: flex-end;*/
+            /*align-items: center;*/
+            /*align-items: baseline;*/
+            /*若项目为设置高度则项目高度则占满整个容器的高度*/
+            align-items: stretch;
+
+
+            width: 1200px;
+            height: 600px;
+            border: 1px solid black;
+        }
+        .box{
+            border: 1px solid black;
+            width: 250px;
+
+            /*height: 200px;*/
+            margin: 10px;
+            /*<!--    flex 属性 是flex-grow flex-shrink flex-basis的简写
+          auto (1 1 auto)     none (0 0 auto)
+       -->*/
+            flex:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!--    order 属性，数值越低 排列越靠前 可以为负数-->
+<!--    flex-grow 属性 定义项目的放大比例-->
+<!--    flex-shrink 属性 定义项目的缩小比例 0不缩小 复制无效-->
+<!--    flex 属性 是flex-grow flex-shrink flex-basis的简写-->
+    <div class="box" style="order:1; flex-grow: 1;">java</div>
+    <div class="box" style="align-self: flex-end">php</div>
+    <div class="box" style="order: 2;flex-grow: 2;">html5</div>
+
+
+
+</div>
+</body>
+</html>
